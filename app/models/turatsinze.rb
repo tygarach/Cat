@@ -1,0 +1,2 @@
+class Turatsinze < ApplicationRecord
+end

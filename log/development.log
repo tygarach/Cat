@@ -1,0 +1,482 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (220.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (144.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateCalculators (20190130164914)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "calculators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar, "firstnumber" integer, "operator" varchar, "secondnumber" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130164914_create_calculators.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130164914"]]
+  ↳ bin/rails:4
+  [1m[35m (130.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateCalculatos (20190130165221)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "calculatos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar, "firstnumber" integer, "operator" varchar, "secondnumber" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130165221_create_calculatos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130165221"]]
+  ↳ bin/rails:4
+  [1m[35m (132.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-30 16:57:33.373848"], ["updated_at", "2019-01-30 16:57:33.373848"]]
+  ↳ bin/rails:4
+  [1m[35m (119.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2019-01-30 09:01:09 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (39.5ms)
+Completed 200 OK in 485ms (Views: 278.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:01:43 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (1.5ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:17
+  Rendered calculatos/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 3808ms (Views: 3726.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/calculatos/new" for 127.0.0.1 at 2019-01-30 09:02:27 -0800
+Processing by CalculatosController#new as HTML
+  Rendering calculatos/new.html.erb within layouts/application
+  Rendered calculatos/_form.html.erb (467.3ms)
+  Rendered calculatos/new.html.erb within layouts/application (534.9ms)
+Completed 200 OK in 1066ms (Views: 954.6ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/calculatos" for 127.0.0.1 at 2019-01-30 09:02:43 -0800
+Processing by CalculatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nuepZOXIm2jsSxj5K/Yy2SaWzKCLj216TadpWsilXAFIXHDv1KHHO91qi5oH6/Ohue+2UmpvUHMKJMEhZGiw4w==", "calculato"=>{"firstname"=>"musa", "firstnumber"=>"2", "operator"=>"*", "secondnumber"=>"2"}, "commit"=>"Create Calculato"}
+  [1m[35m (1.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[36mCalculato Create (29.1ms)[0m  [1m[32mINSERT INTO "calculatos" ("firstname", "firstnumber", "operator", "secondnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "musa"], ["firstnumber", 2], ["operator", "*"], ["secondnumber", 2], ["created_at", "2019-01-30 17:02:44.134840"], ["updated_at", "2019-01-30 17:02:44.134840"]]
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[35m (150.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+Redirected to http://localhost:3000/calculatos/1
+Completed 302 Found in 215ms (ActiveRecord: 180.4ms)
+
+
+Started GET "/calculatos/1" for 127.0.0.1 at 2019-01-30 09:02:44 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 482ms (Views: 366.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:02:50 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:17
+  Rendered calculatos/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 443ms (Views: 370.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos/1" for 127.0.0.1 at 2019-01-30 09:02:53 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 428ms (Views: 349.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:02:56 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:17
+  Rendered calculatos/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 427ms (Views: 355.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos/1/edit" for 127.0.0.1 at 2019-01-30 09:02:59 -0800
+Processing by CalculatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/edit.html.erb within layouts/application
+  Rendered calculatos/_form.html.erb (10.2ms)
+  Rendered calculatos/edit.html.erb within layouts/application (82.4ms)
+Completed 200 OK in 528ms (Views: 452.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos/1" for 127.0.0.1 at 2019-01-30 09:03:06 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 421ms (Views: 346.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-30 09:03:22 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (8.8ms)
+Completed 200 OK in 231ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:03:41 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:17
+  Rendered calculatos/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 439ms (Views: 367.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos/new" for 127.0.0.1 at 2019-01-30 09:03:56 -0800
+Processing by CalculatosController#new as HTML
+  Rendering calculatos/new.html.erb within layouts/application
+  Rendered calculatos/_form.html.erb (9.5ms)
+  Rendered calculatos/new.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 512ms (Views: 441.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculatos" for 127.0.0.1 at 2019-01-30 09:06:11 -0800
+Processing by CalculatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S9vAYiYNOR1Gms0BH9wZEMccnp8D6ecfKy1cSD901gKdYBnpF2RlTne7XmIzwdhoWGXkbeIJ2hZsrvQzk7k64A==", "calculato"=>{"firstname"=>"kiki", "firstnumber"=>"3", "operator"=>"+", "secondnumber"=>"5"}, "commit"=>"Create Calculato"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[36mCalculato Create (22.6ms)[0m  [1m[32mINSERT INTO "calculatos" ("firstname", "firstnumber", "operator", "secondnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "kiki"], ["firstnumber", 3], ["operator", "+"], ["secondnumber", 5], ["created_at", "2019-01-30 17:06:12.077372"], ["updated_at", "2019-01-30 17:06:12.077372"]]
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[35m (175.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+Redirected to http://localhost:3000/calculatos/2
+Completed 302 Found in 235ms (ActiveRecord: 198.5ms)
+
+
+Started GET "/calculatos/2" for 127.0.0.1 at 2019-01-30 09:06:12 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 440ms (Views: 361.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos/2" for 127.0.0.1 at 2019-01-30 09:11:12 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 628ms (Views: 531.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:11:19 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:18
+  Rendered calculatos/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 444ms (Views: 369.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/calculatos/new" for 127.0.0.1 at 2019-01-30 09:11:26 -0800
+Processing by CalculatosController#new as HTML
+  Rendering calculatos/new.html.erb within layouts/application
+  Rendered calculatos/_form.html.erb (9.0ms)
+  Rendered calculatos/new.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 584ms (Views: 483.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculatos" for 127.0.0.1 at 2019-01-30 09:11:44 -0800
+Processing by CalculatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHnAqJZOuwg6zAlvQZr7CdHLcwoQ5wrCgaRaGX87vlb6whkjpyfnWwvtmgxthzpxTrIJ+PEHN8vGJ/Ji0/ZStA==", "calculato"=>{"firstname"=>"tyga", "firstnumber"=>"23", "operator"=>"+", "secondnumber"=>"32"}, "commit"=>"Create Calculato"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[36mCalculato Create (14.1ms)[0m  [1m[32mINSERT INTO "calculatos" ("firstname", "firstnumber", "operator", "secondnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "tyga"], ["firstnumber", 23], ["operator", "+"], ["secondnumber", 32], ["created_at", "2019-01-30 17:11:45.079630"], ["updated_at", "2019-01-30 17:11:45.079630"]]
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[35m (122.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+Redirected to http://localhost:3000/calculatos/3
+Completed 302 Found in 168ms (ActiveRecord: 137.2ms)
+
+
+Started GET "/calculatos/3" for 127.0.0.1 at 2019-01-30 09:11:45 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 432ms (Views: 351.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:11:51 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (1.1ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:18
+  Rendered calculatos/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 418ms (Views: 347.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:14:58 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:18
+  Rendered calculatos/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 425ms (Views: 359.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calculatos/new" for 127.0.0.1 at 2019-01-30 09:16:41 -0800
+Processing by CalculatosController#new as HTML
+  Rendering calculatos/new.html.erb within layouts/application
+  Rendered calculatos/_form.html.erb (9.1ms)
+  Rendered calculatos/new.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 508ms (Views: 438.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculatos" for 127.0.0.1 at 2019-01-30 09:17:02 -0800
+Processing by CalculatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i9r6LkY+aI2xSj/EYCEnNivFbPejpPffozCY3MZy040lLJjiHGl8Qfku5w9nUXkR9ZvQT9urtY5D2oY39QnrA==", "calculato"=>{"firstname"=>"gentle", "firstnumber"=>"23", "operator"=>"+", "secondnumber"=>"234"}, "commit"=>"Create Calculato"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[36mCalculato Create (12.6ms)[0m  [1m[32mINSERT INTO "calculatos" ("firstname", "firstnumber", "operator", "secondnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "gentle"], ["firstnumber", 23], ["operator", "+"], ["secondnumber", 234], ["created_at", "2019-01-30 17:17:02.936854"], ["updated_at", "2019-01-30 17:17:02.936854"]]
+  ↳ app/controllers/calculatos_controller.rb:30
+  [1m[35m (157.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calculatos_controller.rb:30
+Redirected to http://localhost:3000/calculatos/4
+Completed 302 Found in 202ms (ActiveRecord: 170.3ms)
+
+
+Started GET "/calculatos/4" for 127.0.0.1 at 2019-01-30 09:17:03 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCalculato Load (0.7ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 436ms (Views: 358.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/calculatos" for 127.0.0.1 at 2019-01-30 09:17:54 -0800
+Processing by CalculatosController#index as HTML
+  Rendering calculatos/index.html.erb within layouts/application
+  [1m[36mCalculato Load (1.0ms)[0m  [1m[34mSELECT "calculatos".* FROM "calculatos"[0m
+  ↳ app/views/calculatos/index.html.erb:18
+  Rendered calculatos/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 433ms (Views: 360.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/calculatos/4" for 127.0.0.1 at 2019-01-30 09:17:57 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 418ms (Views: 341.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos/4" for 127.0.0.1 at 2019-01-30 09:18:44 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCalculato Load (0.6ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 419ms (Views: 343.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calculatos/4" for 127.0.0.1 at 2019-01-30 09:20:47 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (1122.9ms)
+Completed 500 Internal Server Error in 1436ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `calculato' for #<#<Class:0x579b670>:0xb7ae768>
+Did you mean?  @calculato):
+    21: </p>
+    22: <p>
+    23:   <strong>Result:</strong>
+    24:  <%= @b= calculato.firstnumber + calculato.secondnumber %>
+    25: </p>
+    26: 
+    27: 
+  
+app/views/calculatos/show.html.erb:24:in `_app_views_calculatos_show_html_erb___185274519_96302784'
+Started GET "/calculatos/4" for 127.0.0.1 at 2019-01-30 09:23:46 -0800
+Processing by CalculatosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCalculato Load (0.8ms)[0m  [1m[34mSELECT  "calculatos".* FROM "calculatos" WHERE "calculatos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/calculatos_controller.rb:67
+  Rendering calculatos/show.html.erb within layouts/application
+  Rendered calculatos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 451ms (Views: 377.4ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateJuniors (20190130203506)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190130203506_create_juniors.rb:3
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "juniors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar, "lastname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130203506_create_juniors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130203506"]]
+  ↳ bin/rails:4
+  [1m[35m (237.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateTuratsinzes (20190130203546)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "turatsinzes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar, "lastname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130203546_create_turatsinzes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130203546"]]
+  ↳ bin/rails:4
+  [1m[35m (199.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2019-01-30 12:38:09 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (42.2ms)
+Completed 200 OK in 470ms (Views: 202.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-30 12:39:00 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (15.2ms)
+Completed 200 OK in 272ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-30 12:39:05 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (10.8ms)
+Completed 200 OK in 243ms (Views: 128.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//turatsinzes" for 127.0.0.1 at 2019-01-30 12:39:37 -0800
+Processing by TuratsinzesController#index as HTML
+  Rendering turatsinzes/index.html.erb within layouts/application
+  [1m[36mTuratsinze Load (0.9ms)[0m  [1m[34mSELECT "turatsinzes".* FROM "turatsinzes"[0m
+  ↳ app/views/turatsinzes/index.html.erb:15
+  Rendered turatsinzes/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 4178ms (Views: 4082.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/turatsinzes" for 127.0.0.1 at 2019-01-30 12:40:14 -0800
+Processing by TuratsinzesController#index as HTML
+  Rendering turatsinzes/index.html.erb within layouts/application
+  [1m[36mTuratsinze Load (0.9ms)[0m  [1m[34mSELECT "turatsinzes".* FROM "turatsinzes"[0m
+  ↳ app/views/turatsinzes/index.html.erb:15
+  Rendered turatsinzes/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 592ms (Views: 520.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/turatsinzes/new" for 127.0.0.1 at 2019-01-30 12:40:21 -0800
+Processing by TuratsinzesController#new as HTML
+  Rendering turatsinzes/new.html.erb within layouts/application
+  Rendered turatsinzes/_form.html.erb (273.5ms)
+  Rendered turatsinzes/new.html.erb within layouts/application (348.7ms)
+Completed 200 OK in 832ms (Views: 728.4ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/turatsinzes" for 127.0.0.1 at 2019-01-30 12:40:31 -0800
+Processing by TuratsinzesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"53hhKuORQP+Y4A8KPqui1tDZ4GLCUmvaIyY+2fAGKuUqrW1NGDXXTExwjOg12qP4G9dAYIeKXhpxvh+3czVsJA==", "turatsinze"=>{"firstname"=>"musa", "lastname"=>"rachid"}, "commit"=>"Create Turatsinze"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/turatsinzes_controller.rb:30
+  [1m[36mTuratsinze Create (23.8ms)[0m  [1m[32mINSERT INTO "turatsinzes" ("firstname", "lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["firstname", "musa"], ["lastname", "rachid"], ["created_at", "2019-01-30 20:40:31.201954"], ["updated_at", "2019-01-30 20:40:31.201954"]]
+  ↳ app/controllers/turatsinzes_controller.rb:30
+  [1m[35m (264.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/turatsinzes_controller.rb:30
+Redirected to http://localhost:3000/turatsinzes/1
+Completed 302 Found in 318ms (ActiveRecord: 288.7ms)
+
+
+Started GET "/turatsinzes/1" for 127.0.0.1 at 2019-01-30 12:40:31 -0800
+Processing by TuratsinzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTuratsinze Load (0.9ms)[0m  [1m[34mSELECT  "turatsinzes".* FROM "turatsinzes" WHERE "turatsinzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/turatsinzes_controller.rb:67
+  Rendering turatsinzes/show.html.erb within layouts/application
+  Rendered turatsinzes/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 488ms (Views: 388.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/turatsinzes" for 127.0.0.1 at 2019-01-30 12:40:34 -0800
+Processing by TuratsinzesController#index as HTML
+  Rendering turatsinzes/index.html.erb within layouts/application
+  [1m[36mTuratsinze Load (1.2ms)[0m  [1m[34mSELECT "turatsinzes".* FROM "turatsinzes"[0m
+  ↳ app/views/turatsinzes/index.html.erb:15
+  Rendered turatsinzes/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 476ms (Views: 401.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/turatsinzes/1" for 127.0.0.1 at 2019-01-30 12:40:37 -0800
+Processing by TuratsinzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTuratsinze Load (0.7ms)[0m  [1m[34mSELECT  "turatsinzes".* FROM "turatsinzes" WHERE "turatsinzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/turatsinzes_controller.rb:67
+  Rendering turatsinzes/show.html.erb within layouts/application
+  Rendered turatsinzes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 485ms (Views: 397.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/turatsinzes" for 127.0.0.1 at 2019-01-30 12:40:42 -0800
+Processing by TuratsinzesController#index as HTML
+  Rendering turatsinzes/index.html.erb within layouts/application
+  [1m[36mTuratsinze Load (1.1ms)[0m  [1m[34mSELECT "turatsinzes".* FROM "turatsinzes"[0m
+  ↳ app/views/turatsinzes/index.html.erb:15
+  Rendered turatsinzes/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 491ms (Views: 411.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/turatsinzes" for 127.0.0.1 at 2019-01-30 12:42:48 -0800
+Processing by TuratsinzesController#index as HTML
+  Rendering turatsinzes/index.html.erb within layouts/application
+  [1m[36mTuratsinze Load (0.8ms)[0m  [1m[34mSELECT "turatsinzes".* FROM "turatsinzes"[0m
+  ↳ app/views/turatsinzes/index.html.erb:15
+  Rendered turatsinzes/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 465ms (Views: 391.0ms | ActiveRecord: 0.8ms)
+
+

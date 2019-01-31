@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @calculato.firstname %>
+</p>
+
+<p>
+  <strong>Firstnumber:</strong>
+  <%= @calculato.firstnumber %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @calculato.operator %>
+</p>
+
+<p>
+  <strong>Secondnumber:</strong>
+  <%= @calculato.secondnumber %>
+</p>
+
+
+<%= link_to 'Edit', edit_calculato_path(@calculato) %> |
+<%= link_to 'Back', calculatos_path %>
